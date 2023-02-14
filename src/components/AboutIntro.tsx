@@ -1,10 +1,15 @@
 import React from "react";
+import { FaPlay, FaStepBackward, FaRetweet } from "react-icons/fa";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import CassetteTape from "./CassetteTape";
-
+import "./AboutIntro.style.scss";
 
 type Props = {
   isShown: boolean;
+  goBack: () => void;
+  currentSide: "A" | "B";
+  flipCassette: () => void;
+  playCassette: () => void;
 };
 
 const parAnim: Variants = {
@@ -38,15 +43,16 @@ const itemAnim: Variants = {
   },
 };
 
-const AboutIntro = ({ isShown }: Props) => {
+const AboutIntro = ({ isShown, goBack, currentSide, flipCassette, playCassette }: Props) => {
   return (
     <AnimatePresence>
       {isShown && (
         <>
           <motion.header
             initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 1.2 }}
+            animate={{ y: 0, opacity: 1, transition: { delay: 1.2 } }}
+            exit={{ scale: 0, opacity: 0 }}
+            transition={{ duration: 1 }}
             className="text-center mt-2 space-y-1"
           >
             <h1 className="text-3xl">Valentine's Day</h1>
@@ -56,6 +62,7 @@ const AboutIntro = ({ isShown }: Props) => {
             variants={parAnim}
             initial="hidden"
             animate="show"
+            exit="hidden"
             className="text-center space-y-2 mt-3 text-sm"
           >
             <hr className="mx-4" />
@@ -81,15 +88,22 @@ const AboutIntro = ({ isShown }: Props) => {
             </motion.p>
             <hr className="mx-4" />
           </motion.section>
-            <motion.div 
-                initial={{ y: 250 }}
-                animate={{ y: 0 }}
-                transition={{ duration: 1, delay: 2 }}
-            className="relative">
-                <CassetteTape />
+          <motion.div
+            initial={{ y: 250 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 1, delay: 2 }}
+            className="relative"
+          >
+            <motion.div
+              id="controlButtons"
+              className="flex flex-row w-100 items-center justify-around py-3"
+            >
+              <FaStepBackward className="control-button" onClick={goBack} />
+              <FaPlay className="control-button" onClick={playCassette} />
+              <FaRetweet className="control-button" onClick={flipCassette} />
             </motion.div>
-            {/* <CassetteTape /> */}
-
+            <CassetteTape currentSide={currentSide} />
+          </motion.div>
         </>
       )}
     </AnimatePresence>
@@ -97,5 +111,3 @@ const AboutIntro = ({ isShown }: Props) => {
 };
 
 export default AboutIntro;
-
-

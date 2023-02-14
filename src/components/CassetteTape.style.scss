@@ -14,15 +14,6 @@ $body: #4c8077;
 
 $lato: "Lato", sans-serif;
 
-// *, :after, :before {
-//   box-sizing: border-box;
-// }
-
-// body {
-//   font-family: $lato;
-//   background: $body;
-// }
-
 .container {
   margin: 0 auto;
   max-width: 60rem;
@@ -39,7 +30,7 @@ $lato: "Lato", sans-serif;
   transform: translateX(-50%) translateY(-50%);
   width: 25rem;
   height: 15rem;
-  margin-top: 8.2rem;
+  margin-top: 7.5rem;
   z-index: 2;
   border-radius: $radius;
   background: $cassette;
