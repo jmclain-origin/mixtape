@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FaPlay, FaStepBackward, FaRetweet } from "react-icons/fa";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import CassetteTape from "./CassetteTape";
@@ -9,7 +9,7 @@ type Props = {
   goBack: () => void;
   currentSide: "A" | "B";
   flipCassette: () => void;
-  playCassette: () => void;
+  selectSide: () => void;
 };
 
 const parAnim: Variants = {
@@ -21,41 +21,59 @@ const parAnim: Variants = {
     opacity: 1,
     scale: 1,
     transition: {
-      delay: 1.5,
+      delay: 0.5,
       duration: 1,
-      delayChildren: 2,
-      staggerChildren: 0.5,
+      delayChildren: 1.2,
+      staggerChildren: 0.2,
     },
   },
 };
 
 const itemAnim: Variants = {
   hidden: {
-    y: -150,
+    y: 150,
     opacity: 0,
   },
   show: {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.7,
+      duration: 0.5,
     },
   },
 };
 
-const AboutIntro = ({ isShown, goBack, currentSide, flipCassette, playCassette }: Props) => {
+const AboutIntro = ({
+  isShown,
+  goBack,
+  currentSide,
+  flipCassette,
+  selectSide,
+}: Props) => {
+  const [cassetteFlipRotation, setCassetteFlipRotation] = useState(0);
+  const [displayCassette, setDisplayCassette] = useState(true);
+
+  const playCassette = () => {
+    setDisplayCassette(false);
+  };
+
+  useEffect(() => {
+    if (currentSide === "A") setCassetteFlipRotation(360);
+    else if (currentSide === "B") setCassetteFlipRotation(0);
+  }, [currentSide, flipCassette]);
+
   return (
     <AnimatePresence>
       {isShown && (
         <>
           <motion.header
             initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1, transition: { delay: 1.2 } }}
+            animate={{ y: 0, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             transition={{ duration: 1 }}
             className="text-center mt-2 space-y-1"
           >
-            <h1 className="text-3xl">Valentine's Day</h1>
+            {/* <h1 className="text-3xl">Valentine's Day</h1> */}
             <h2 className="text-3xl">&#10084; Mix Tape &#10084;</h2>
           </motion.header>
           <motion.section
@@ -89,21 +107,36 @@ const AboutIntro = ({ isShown, goBack, currentSide, flipCassette, playCassette }
             <hr className="mx-4" />
           </motion.section>
           <motion.div
-            initial={{ y: 250 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 1, delay: 2 }}
-            className="relative"
+            id="controlButtons"
+            className="flex flex-row w-100 items-center justify-around py-3"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1, transition: { duration: 1.5 } }}
+            exit={{ scale: 0, opacity: 0, transition: { duration: 0.5 } }}
           >
-            <motion.div
-              id="controlButtons"
-              className="flex flex-row w-100 items-center justify-around py-3"
-            >
-              <FaStepBackward className="control-button" onClick={goBack} />
-              <FaPlay className="control-button" onClick={playCassette} />
-              <FaRetweet className="control-button" onClick={flipCassette} />
-            </motion.div>
-            <CassetteTape currentSide={currentSide} />
+            <FaStepBackward className="control-button" onClick={goBack} />
+            <FaPlay className="control-button" onClick={playCassette} />
+            <FaRetweet className="control-button" onClick={flipCassette} />
           </motion.div>
+          <AnimatePresence>
+            {displayCassette && (
+              <motion.div
+                initial={{ scale: 0.75, y: 250, rotateY: cassetteFlipRotation }}
+                animate={{
+                  scale: 1,
+                  y: 0,
+                  rotateY: cassetteFlipRotation,
+                  transition: { duration: 1.5 },
+                }}
+                exit={{ scale: 0.75, y: 250, transition: { duration: 1 } }}
+                onAnimationComplete={(def: any) => {
+                    if (def?.y > 0) selectSide();
+                }}
+                className="relative"
+              >
+                <CassetteTape currentSide={currentSide} />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </>
       )}
     </AnimatePresence>
