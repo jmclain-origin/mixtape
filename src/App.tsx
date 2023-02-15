@@ -14,7 +14,7 @@ function App() {
   const [showASide, setShowASide] = useState(false);
 
   const toggleHeartHeroToIntro = () => {
-    setShowHeartHero(false);
+    // setShowHeartHero(false);
     setShowIntro(true);
   };
 
@@ -38,9 +38,10 @@ function App() {
   };
 
   return (
-    <main className="px-2 lg:px-40 xl:px-96 min-h-screen">
+    <main className="px-2 lg:px-40 xl:px-96 min-h-screen overflow-hidden">
       <HeartHero
         isShown={showHeartHero}
+        setIsShown={setShowHeartHero}
         toggleNextView={toggleHeartHeroToIntro}
       />
 
@@ -49,7 +50,7 @@ function App() {
         goBack={backFromIntro}
         currentSide={cassetteSide}
         flipCassette={toggleCassetteSide}
-        playCassette={showSelectedCassetteSide}
+        selectSide={showSelectedCassetteSide}
       />
       {showASide && <ASide />}
       {showBSide && <BSide />}
