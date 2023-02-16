@@ -17,7 +17,7 @@ const HeartHero = ({ isShown, setIsShown, toggleNextView }: Props) => {
             initial={{ y: -200 }}
             animate={{ y: 0, transition: { duration: 6 } }}
             exit={{ y: -200, transition: { duration: 1 } }}
-            className="freehand text-5xl text-center pt-16"
+            className="freehand text-5xl text-center pt-16 line-through"
           >
             Happy Valentine's Day
           </motion.h1>
@@ -29,9 +29,9 @@ const HeartHero = ({ isShown, setIsShown, toggleNextView }: Props) => {
               transition: { duration: 3, delay: 5 },
             }}
             exit={{ scale: 0, transition: { duration: 1 } }}
-            className="freehand text-4xl text-center pt-12"
+            className="freehand text-4xl text-center pt-12 line-through"
           >
-            Tap the heart
+            Smash the heart
           </motion.h1>
           <motion.div
             initial={{ opacity: 1 }}

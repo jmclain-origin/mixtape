@@ -74,7 +74,7 @@ const AboutIntro = ({
             className="text-center mt-2 space-y-1"
           >
             {/* <h1 className="text-3xl">Valentine's Day</h1> */}
-            <h2 className="text-3xl">&#10084; Mix Tape &#10084;</h2>
+            <h2 className="text-3xl text-black bg-black">&#10084; Mixtape &#10084;</h2>
           </motion.header>
           <motion.section
             variants={parAnim}
@@ -85,30 +85,29 @@ const AboutIntro = ({
           >
             <hr className="mx-4" />
             <motion.p variants={itemAnim}>
-              Sometimes I wish for a simpler time, when we had less technology
-              embedded in our lives. Tech has made somethings in life better but
-              there's a disconnect being so connected.
+              Blah blah, blah blah blah, blah blah blah blah, blah blah blah.
+              Yackity smackity. there was something here but now it just a 404.
             </motion.p>
             <motion.p variants={itemAnim}>
-              One thing I miss is the concept of a mix tape. There's something
-              nostalgic and romantic about sitting by the stereo queuing up
-              tracks from your collection or trying to catch that one song on
-              the radio and hitting record to capture it on a cassette tape.
+              Updates to be determined and shall be release on the 5th Saturday
+              of February 2023. Ticking time is running out as my temperature
+              declines.
             </motion.p>
             <motion.p variants={itemAnim}>
-              The closest thing we get these days is creating a playlist on some
-              streaming platform which is missing something, the effort. Making
-              a mix tape took time and preparation.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,
+              autem voluptas. Laboriosam nihil amet rerum eaque eum aperiam
+              fugiat minus provident eveniet error at, tenetur quis quae.
             </motion.p>
             <motion.p variants={itemAnim}>
-              So I present you with my idea of a modern day mix tape. Put
-              together with care and effort. Hope you enjoy.
+              Wtf, fml!? I digress into something cold, drunk and Fing
+              hilarious. Fail my way forward, what doesn't kill you gives you a
+              dark sense of humor and a few unhealthy coping mechanisms.
             </motion.p>
             <hr className="mx-4" />
           </motion.section>
           <motion.div
             id="controlButtons"
-            className="flex flex-row w-100 items-center justify-around py-3"
+            className="flex flex-row w-100 items-center justify-around py-3 mt-2"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1, transition: { duration: 1.5 } }}
             exit={{ scale: 0, opacity: 0, transition: { duration: 0.5 } }}
@@ -129,7 +128,7 @@ const AboutIntro = ({
                 }}
                 exit={{ scale: 0.75, y: 250, transition: { duration: 1 } }}
                 onAnimationComplete={(def: any) => {
-                    if (def?.y > 0) selectSide();
+                  if (def?.y > 0) selectSide();
                 }}
                 className="relative"
               >
