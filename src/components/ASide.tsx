@@ -1,29 +1,25 @@
-import React from 'react'
+import React from "react";
 
-type Props = {}
+type Props = {};
 
 const ASide = (props: Props) => {
   return (
     <section id="Aside" className="space-y-4">
-        <h2 className="text-5xl text-center">A Side</h2>
-        <p className="text-sm px-4">
-          This first side is pretty simple and was easiest to just attach a
-          playlist/radio station that I find myself often listening to lately.
-          But for me it sets a mood, a genre you kinda got me hooked on and now
-          I've come to associate it with you. Either way it's chill, calming,
-          and relaxing and just reminds me of hanging out with you in our more
-          recent times.
-        </p>
-        <iframe
-          title="Aside"
-          src="https://open.spotify.com/embed/playlist/37i9dQZF1E4vV3JUOuLRSO?utm_source=generator&theme=0"
-          width="100%"
-          height="420"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-        ></iframe>
-      </section>
-  )
-}
+      <h2 className="text-5xl text-center">A Side?</h2>
+      <p className="text-sm px-4">
+        more like no side. I think it got to close to a magnet. downside to
+        cassettes. since you're here, enjoy a cat video.
+      </p>
+      <iframe
+        width="100%"
+        height="315"
+        src="https://www.youtube.com/embed/wB9afdV2BgA"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+      ></iframe>
+    </section>
+  );
+};
 
-export default ASide
+export default ASide;

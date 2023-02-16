@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Sassy+Frass&display=swap'); // font-family: 'Sassy Frass', cursive
 
 $strokeColor: grey;
-$heartColor: #410b44;
+$heartColor: #000000;
 $size: 165px; // change this to manipulate overall size
 $totalAnim: 7s;
 $delay: 0.1s;
@@ -173,29 +173,29 @@ $circleW: 60px;
   87% {
     stroke-dashoffset: 0;
     fill: $heartColor;
-    filter: drop-shadow(0 0 10px rgb(164, 163, 163));
+    filter: drop-shadow(0 0 0px rgb(164, 163, 163));
   }
   95% {
     stroke-dashoffset: 0;
     fill: $heartColor;
-    filter: drop-shadow(0 0 20px rgb(238, 233, 233));
+    filter: drop-shadow(0 0 0px rgb(238, 233, 233));
   }
   100% {
     stroke-dashoffset: 0;
     fill: $heartColor;
-    filter: drop-shadow(0 0 30px rgb(238, 233, 233));
+    filter: drop-shadow(0 0 0px rgb(238, 233, 233));
   }
 }
 
 @keyframes heart-grow-pulse {
   from {
-    filter: drop-shadow(0 0 40px rgb(238, 233, 233));
+    filter: drop-shadow(0 0 0px rgb(238, 233, 233));
   }
   50% {
-    filter: drop-shadow(0 0 25px rgb(237, 78, 78));
+    filter: drop-shadow(0 0 5px rgb(237, 78, 78));
   }
   to {
-    filter: drop-shadow(0 0 40px rgb(238, 233, 233));
+    filter: drop-shadow(0 0 0px rgb(238, 233, 233));
   }
 }
 

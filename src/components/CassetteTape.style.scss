@@ -4,7 +4,7 @@ $root: 1.6rem;
 $radius: 0.5rem;
 
 $cassette: #231f23;
-$label: linear-gradient(#faedda 50%, #e9802f 50%);
+$label: linear-gradient(#faedda 50%, #f8312f 50%);
 $spool: #fff;
 $spool-border: #8b8681;
 $wire: #45230c;
@@ -30,7 +30,7 @@ $lato: "Lato", sans-serif;
   transform: translateX(-50%) translateY(-50%);
   width: 25rem;
   height: 15rem;
-  margin-top: 7.5rem;
+  margin-top: 9rem;
   z-index: 2;
   border-radius: $radius;
   background: $cassette;
