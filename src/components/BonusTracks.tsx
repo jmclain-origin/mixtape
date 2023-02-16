@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-type Props = {}
+type Props = {};
 
 const BonusTracks = (props: Props) => {
   return (
@@ -88,4 +88,4 @@ const BonusTracks = (props: Props) => {
   )
 }
 
-export default BonusTracks
+export default BonusTracks;
