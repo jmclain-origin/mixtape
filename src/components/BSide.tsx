@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
+import BonusTracks from './BonusTracks';
 
 type Props = {}
 
 const BSide = (props: Props) => {
   return (
+    <>
     <section id="Bside" className="space-y-4">
         <h2 className="text-5xl text-center">B Side</h2>
         <h3 className="text-2xl text-center">
@@ -234,6 +236,8 @@ const BSide = (props: Props) => {
           ></iframe>
         </article>
       </section>
+      <BonusTracks />
+      </>
   )
 }
 
