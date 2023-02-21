@@ -12,7 +12,7 @@ $svgSize: 90px;
 $circleW: 60px;
 
 .freehand {
-  font-family: 'Sassy Frass', cursive
+  font-family: 'Sassy Frass', cursive;
 }
 
 .heart-loader {
@@ -20,7 +20,7 @@ $circleW: 60px;
   display: block;
   left: 50%;
   top: 50%;
-  margin-top: $size/-2;
+  margin-top: calc($size / -2);
   width: $size;
   height: $size;
   overflow: visible;
@@ -50,7 +50,7 @@ $circleW: 60px;
     stroke: $strokeColor;
     stroke-dasharray: $circleLen, $circleLen;
     stroke-dashoffset: $circleLen;
-    transform-origin: $circleW $circleW/2;
+    transform-origin: $circleW calc($circleW / 2);
 
     &.m--left {
       animation: left-circle-anim $totalAnim $delay 1;
@@ -97,21 +97,21 @@ $circleW: 60px;
   }
   41% {
     stroke-dashoffset: 0;
-    transform: translateY($circleW/-2);
+    transform: translateY(calc($circleW / -2));
   }
   43% {
     stroke-dashoffset: 0;
-    transform: translateY($circleW/-2);
+    transform: translateY(calc($circleW / -2));
     opacity: 1;
   }
   85% {
     stroke-dashoffset: 0;
-    transform: translateY($circleW/-2);
+    transform: translateY(calc($circleW / -2));
     opacity: 0;
   }
   100% {
     stroke-dashoffset: 0;
-    transform: translateY($circleW/-2);
+    transform: translateY(calc($circleW / -2));
     opacity: 0;
   }
 }
@@ -125,21 +125,21 @@ $circleW: 60px;
   }
   41% {
     stroke-dashoffset: 0;
-    transform: translateX($circleW/2);
+    transform: translateX(calc($circleW / 2));
   }
   43% {
     stroke-dashoffset: 0;
-    transform: translateX($circleW/2);
+    transform: translateX(calc($circleW / 2));
     opacity: 1;
   }
   85% {
     stroke-dashoffset: 0;
-    transform: translateX($circleW/2);
+    transform: translateX(calc($circleW / 2));
     opacity: 0;
   }
   100% {
     stroke-dashoffset: 0;
-    transform: translateX($circleW/2);
+    transform: translateX(calc($circleW / 2));
     opacity: 0;
   }
 }
