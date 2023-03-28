@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import AboutIntro from "./components/AboutIntro";
 import ASide from "./components/ASide";
 import BSide from "./components/BSide";
-// import BonusTracks from "./components/BonusTracks";
 import HeartHero from "./components/HeartHero";
 import "./app.style.css";
 
@@ -13,20 +12,20 @@ function App() {
   const [showBSide, setShowBSide] = useState(false);
   const [showASide, setShowASide] = useState(false);
 
-  const toggleHeartHeroToIntro = () => {
-    // setShowHeartHero(false);
+  const toggleHeartHeroToIntro = useCallback(() => {
+    setShowHeartHero(false);
     setShowIntro(true);
-  };
+  },[]);
 
-  const backFromIntro = () => {
+  const backFromIntro = useCallback(() => {
     setShowIntro(false);
     setShowHeartHero(true);
-  };
+  },[]);
 
-  const toggleCassetteSide = () =>
-    setCassetteSide((prevState) => (prevState === "A" ? "B" : "A"));
+  const toggleCassetteSide =  useCallback(() => {
+    setCassetteSide((prevState) => (prevState === "A" ? "B" : "A"))},[]);
 
-  const showSelectedCassetteSide = () => {
+  const showSelectedCassetteSide = useCallback(() => {
     if (cassetteSide === "A") {
       setShowASide(true);
       setShowBSide(false);
@@ -35,7 +34,7 @@ function App() {
       setShowASide(false);
     }
     setShowIntro(false);
-  };
+  },[cassetteSide]);
 
   return (
     <main className="px-2 lg:px-40 xl:px-96 min-h-screen overflow-hidden">
