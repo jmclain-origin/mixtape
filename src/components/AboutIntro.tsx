@@ -66,16 +66,15 @@ const AboutIntro = ({
     <AnimatePresence>
       {isShown && (
         <>
-          <motion.header
+          {/* <motion.header
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             transition={{ duration: 1 }}
             className="text-center mt-2 space-y-1"
           >
-            {/* <h1 className="text-3xl">Valentine's Day</h1> */}
-            <h2 className="text-3xl">&#10084; Mix Tape &#10084;</h2>
-          </motion.header>
+           
+          </motion.header> */}
           <motion.section
             variants={parAnim}
             initial="hidden"
