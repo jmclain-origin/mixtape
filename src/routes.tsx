@@ -5,12 +5,13 @@ import RootLayout from "pages/RootLayout";
 import Home from "pages/Home";
 import Intro from "pages/Intro";
 import PlayView from "pages/PlayView";
+import ErrorPage from "pages/ErrorPage";
 
 
 const routes = createBrowserRouter([
     {
         path: "/",
-        errorElement: <h1>404 - Opps that's not here yet ;\</h1>,
+        errorElement: <ErrorPage />,
         element: <RootLayout />,
         children: [
             {
