@@ -62,19 +62,16 @@ export const bSide: TrackInfoType[] = [
     src: "https://open.spotify.com/embed/track/0pwObEOHolQZSldJ2q1wpy?utm_source=generator&theme=0",
     comment: `the significance of this track has to do with a moment. To keep it simple, it was playing when I had a feeling that overwhelmed me while we were together. Now it associated to moment forever.`
   },
-
   {
     title: "Passenger - Deftones",
     src: "https://open.spotify.com/embed/track/7IoK6jZBxY7NMoQPoPXZCF?utm_source=generator&theme=0",
     comment: `I've always like this track, then I started to hear it differently. Whatever this may be, I'm along for the ride. I'm your passenger.`
   },
-
   {
     title: "Be My Druidess - Type O Negative",
     src: "https://open.spotify.com/embed/track/1ycz5DvATLtmn2pOU8u38C?utm_source=generator&theme=0",
     comment: ` wouldn't be right with out another Type O Negative track on here.`
   },
-
   {
     title: "I Wanna Be Yours - Arctic Monkeys",
     src: "https://open.spotify.com/embed/track/5XeFesFbtLpXzIVDNQP22n?utm_source=generator&theme=0",

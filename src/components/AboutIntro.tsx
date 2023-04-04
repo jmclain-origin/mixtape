@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import { FaPlay, FaStepBackward, FaRetweet } from "react-icons/fa";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import CassetteTape from "./CassetteTape";
@@ -9,7 +10,6 @@ type Props = {
   goBack: () => void;
   currentSide: "A" | "B";
   flipCassette: () => void;
-  selectSide: () => void;
 };
 
 const parAnim: Variants = {
@@ -48,14 +48,14 @@ const AboutIntro = ({
   goBack,
   currentSide,
   flipCassette,
-  selectSide,
 }: Props) => {
+  const navigate = useNavigate();
   const [cassetteFlipRotation, setCassetteFlipRotation] = useState(0);
   const [displayCassette, setDisplayCassette] = useState(true);
 
-  const playCassette = () => {
+  const playCassette = useCallback(() => {
     setDisplayCassette(false);
-  };
+  }, [setDisplayCassette]);
 
   useEffect(() => {
     if (currentSide === "A") setCassetteFlipRotation(360);
@@ -66,16 +66,15 @@ const AboutIntro = ({
     <AnimatePresence>
       {isShown && (
         <>
-          <motion.header
+          {/* <motion.header
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             transition={{ duration: 1 }}
             className="text-center mt-2 space-y-1"
           >
-            {/* <h1 className="text-3xl">Valentine's Day</h1> */}
-            <h2 className="text-3xl">&#10084; Mix Tape &#10084;</h2>
-          </motion.header>
+           
+          </motion.header> */}
           <motion.section
             variants={parAnim}
             initial="hidden"
@@ -129,7 +128,7 @@ const AboutIntro = ({
                 }}
                 exit={{ scale: 0.75, y: 250, transition: { duration: 1 } }}
                 onAnimationComplete={(def: any) => {
-                    if (def?.y > 0) selectSide();
+                    if (def?.y > 0) navigate(`/play/${currentSide}`);
                 }}
                 className="relative"
               >

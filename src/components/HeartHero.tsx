@@ -1,14 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import "./HeartHero.style.scss";
 
 type Props = {
   isShown: boolean;
   setIsShown: (isShown: boolean) => void;
-  toggleNextView: () => void;
 };
 
-const HeartHero = ({ isShown, setIsShown, toggleNextView }: Props) => {
+const HeartHero = ({ isShown, setIsShown }: Props) => {
+  const navigate = useNavigate();
   return (
     <AnimatePresence>
       {isShown && (
@@ -39,7 +40,7 @@ const HeartHero = ({ isShown, setIsShown, toggleNextView }: Props) => {
             exit={{ opacity: 0, scale: 0 }}
             transition={{ duration: 1.5 }}
             onAnimationComplete={(def: any) => {
-              if (def?.scale === 0) toggleNextView();
+              if (def?.scale === 0) navigate('/intro')
             }}
           >
             <svg
