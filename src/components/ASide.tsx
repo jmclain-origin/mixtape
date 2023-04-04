@@ -1,12 +1,11 @@
 import React from 'react'
 
-type Props = {}
 
-const ASide = (props: Props) => {
+
+const ASide = () => {
   return (
     <section id="Aside" className="space-y-4">
-        <h2 className="text-5xl text-center">A Side</h2>
-        <p className="text-sm px-4">
+        <p className="text-sm px-4 font-redacted">
           This first side is pretty simple and was easiest to just attach a
           playlist/radio station that I find myself often listening to lately.
           But for me it sets a mood, a genre you kinda got me hooked on and now
@@ -19,7 +18,6 @@ const ASide = (props: Props) => {
           src="https://open.spotify.com/embed/playlist/37i9dQZF1E4vV3JUOuLRSO?utm_source=generator&theme=0"
           width="100%"
           height="420"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
         ></iframe>
       </section>

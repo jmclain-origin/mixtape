@@ -43,12 +43,7 @@ const itemAnim: Variants = {
   },
 };
 
-const AboutIntro = ({
-  isShown,
-  goBack,
-  currentSide,
-  flipCassette,
-}: Props) => {
+const AboutIntro = ({ isShown, goBack, currentSide, flipCassette }: Props) => {
   const navigate = useNavigate();
   const [cassetteFlipRotation, setCassetteFlipRotation] = useState(0);
   const [displayCassette, setDisplayCassette] = useState(true);
@@ -71,8 +66,20 @@ const AboutIntro = ({
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="text-center space-y-2 mt-3 text-sm"
+            className="text-center space-y-2 mt-3 text-sm font-redacted"
           >
+            <hr className="mb-4" />
+            <motion.div
+              id="controlButtons"
+              className="flex flex-row w-100 items-center justify-around pb-3"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1, transition: { duration: 1.5 } }}
+              exit={{ scale: 0, opacity: 0, transition: { duration: 0.5 } }}
+            >
+              <FaStepBackward className="control-button" onClick={goBack} />
+              <FaPlay className="control-button" onClick={playCassette} />
+              <FaRetweet className="control-button" onClick={flipCassette} />
+            </motion.div>
             <hr className="mx-4" />
             <motion.p variants={itemAnim}>
               Sometimes I wish for a simpler time, when we had less technology
@@ -96,17 +103,7 @@ const AboutIntro = ({
             </motion.p>
             <hr className="mx-4" />
           </motion.section>
-          <motion.div
-            id="controlButtons"
-            className="flex flex-row w-100 items-center justify-around py-3"
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1, transition: { duration: 1.5 } }}
-            exit={{ scale: 0, opacity: 0, transition: { duration: 0.5 } }}
-          >
-            <FaStepBackward className="control-button" onClick={goBack} />
-            <FaPlay className="control-button" onClick={playCassette} />
-            <FaRetweet className="control-button" onClick={flipCassette} />
-          </motion.div>
+
           <AnimatePresence>
             {displayCassette && (
               <motion.div
@@ -119,9 +116,9 @@ const AboutIntro = ({
                 }}
                 exit={{ scale: 0.75, y: 250, transition: { duration: 1 } }}
                 onAnimationComplete={(def: any) => {
-                    if (def?.y > 0) navigate(`/play/${currentSide}`);
+                  if (def?.y > 0) navigate(`/play/${currentSide}`);
                 }}
-                className="relative"
+                className="relative mt-3"
               >
                 <CassetteTape currentSide={currentSide} />
               </motion.div>

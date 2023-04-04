@@ -24,8 +24,8 @@ export default function RootLayout() {
 
   return (
     <>
-      <nav className="flex items-center justify-between px-5 py-4">
-        <span className="text-2xl" onClick={handleNavigationClick} data-action="back" >
+      <nav className="flex items-center justify-between px-3 py-2">
+        <span className="text-3xl grayscale" onClick={handleNavigationClick} data-action="back" >
           {isPlaylist ? (
             <FaBackward
               className="control-button"
@@ -34,8 +34,8 @@ export default function RootLayout() {
             <>&#10084;</>
           )}
         </span>
-        {!isHome && <h2 className="text-3xl">Mix Tape</h2>}
-        <span className="text-2xl" onClick={handleNavigationClick} data-action="forward">
+        {!isHome && <h2 className="text-7xl font-sassy">{isAside ? 'A Side' : isBside ? 'B Side' : "Mix Tape"}</h2>}
+        <span className="text-3xl grayscale" onClick={handleNavigationClick} data-action="forward">
           {isPlaylist ? (
             <FaForward
               className="control-button"
@@ -45,7 +45,7 @@ export default function RootLayout() {
           )}
         </span>
       </nav>
-      <main className="min-h-screen px-4 pt-3">
+      <main className="min-h-screen px-4">
         <Outlet />
       </main>
     </>
