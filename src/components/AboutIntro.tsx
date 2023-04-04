@@ -66,15 +66,6 @@ const AboutIntro = ({
     <AnimatePresence>
       {isShown && (
         <>
-          {/* <motion.header
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ scale: 0, opacity: 0 }}
-            transition={{ duration: 1 }}
-            className="text-center mt-2 space-y-1"
-          >
-           
-          </motion.header> */}
           <motion.section
             variants={parAnim}
             initial="hidden"
