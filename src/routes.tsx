@@ -10,7 +10,7 @@ import PlayView from "pages/PlayView";
 const routes = createBrowserRouter([
     {
         path: "/",
-        errorElement: <h1>404</h1>,
+        errorElement: <h1>404 - Opps that's not here yet ;\</h1>,
         element: <RootLayout />,
         children: [
             {

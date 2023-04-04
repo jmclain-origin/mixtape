@@ -8,7 +8,7 @@ export default function RootLayout() {
 
   const isHome = location.pathname === "/";
   const isPlaylist = /play\/[AB]$/g.test(location.pathname);
-  const isAside = /search\/A$/g.test(location.pathname);
+  const isAside = /play\/A$/g.test(location.pathname);
   const isBside = /play\/B$/g.test(location.pathname);
  
   const handleNavigationClick = useCallback((event: MouseEvent<HTMLSpanElement>) => {
