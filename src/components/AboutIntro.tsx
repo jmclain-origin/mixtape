@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import { FaPlay, FaStepBackward, FaRetweet } from "react-icons/fa";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import CassetteTape from "./CassetteTape";
@@ -9,7 +10,6 @@ type Props = {
   goBack: () => void;
   currentSide: "A" | "B";
   flipCassette: () => void;
-  selectSide: () => void;
 };
 
 const parAnim: Variants = {
@@ -48,14 +48,14 @@ const AboutIntro = ({
   goBack,
   currentSide,
   flipCassette,
-  selectSide,
 }: Props) => {
+  const navigate = useNavigate();
   const [cassetteFlipRotation, setCassetteFlipRotation] = useState(0);
   const [displayCassette, setDisplayCassette] = useState(true);
 
-  const playCassette = () => {
+  const playCassette = useCallback(() => {
     setDisplayCassette(false);
-  };
+  }, [setDisplayCassette]);
 
   useEffect(() => {
     if (currentSide === "A") setCassetteFlipRotation(360);
@@ -129,7 +129,7 @@ const AboutIntro = ({
                 }}
                 exit={{ scale: 0.75, y: 250, transition: { duration: 1 } }}
                 onAnimationComplete={(def: any) => {
-                    if (def?.y > 0) selectSide();
+                    if (def?.y > 0) navigate(`/play/${currentSide}`);
                 }}
                 className="relative"
               >
