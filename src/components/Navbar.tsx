@@ -22,7 +22,7 @@ const Navbar = () => {
         isBside && navigate("/play/A");
       } else if (action === "forward") {
         isAside && navigate("/play/B");
-        isBside && navigate("/bonus");
+        isBside && navigate("/play/bonus");
       }
     },
     [isAside, isBside, navigate]

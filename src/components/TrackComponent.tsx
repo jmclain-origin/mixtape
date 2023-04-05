@@ -1,7 +1,7 @@
 import React from "react";
-import { TrackInfoType } from "assets/data";
+import { TrackInfo } from "assets/dataV2";
 
-export const TrackComponent = ({ title, src, comment }: TrackInfoType) => {
+export const TrackComponent = ({ title, src, comment }: TrackInfo) => {
   return (
     <article className="space-y-2">
       <p className="text-md">

@@ -5,9 +5,11 @@ import Navbar from "components/Navbar";
 export default function RootLayout() {
   return (
     <>
-      <Navbar />
-      <main className="min-h-screen px-4">
-        <Outlet />
+      <main className="h-screen">
+        <Navbar />
+        <div className="px-2">
+          <Outlet />
+        </div>
       </main>
     </>
   );

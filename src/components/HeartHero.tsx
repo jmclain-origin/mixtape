@@ -8,6 +8,11 @@ type Props = {
   setIsShown: (isShown: boolean) => void;
 };
 
+type A = {
+  scale: number;
+  opacity: number;
+}
+
 const HeartHero = ({ isShown, setIsShown }: Props) => {
   const navigate = useNavigate();
   return (
@@ -23,12 +28,12 @@ const HeartHero = ({ isShown, setIsShown }: Props) => {
             Happy Valentine's Day
           </motion.h1>
           <motion.div
+          className="flex h-full items-center justify-center"
             initial={{ opacity: 1 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0, scale: 0 }}
-            transition={{ duration: 1.5 }}
-            onAnimationComplete={(def: any) => {
-              if (def?.scale === 0) navigate("/intro");
+            animate={{ opacity: 1, transition: { duration: 1.5 } }}
+            exit={{ opacity: 0, y: 800, transition: { duration: 1 } }}
+            onAnimationComplete={(def: A) => {
+              if (def.opacity === 0) navigate("/intro");
             }}
           >
             <svg

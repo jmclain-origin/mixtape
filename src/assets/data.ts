@@ -1,10 +1,5 @@
-export type TrackInfoType = {
-  title: string;
-  src: string;
-  comment: string;
-};
-
-export const bSide: TrackInfoType[] = [
+import { TrackInfo } from "./dataV2";
+export const bSide: TrackInfo[] = [
   {
     title: "N.I.B. - Black Sabbath",
     src: "https://open.spotify.com/embed/track/2GnVuaoKSkB6Xa07l1BBg8?utm_source=generator&theme=0",
@@ -81,7 +76,7 @@ export const bSide: TrackInfoType[] = [
   },
 ];
 
-export const Aside: TrackInfoType[] = [
+export const aSide: TrackInfo[] = [
   {
     title: "Crave you - Flight Facilities",
     src: "https://open.spotify.com/embed/track/5jdGLLEA1e85jy9VYdggoP?utm_source=generator&theme=0",
@@ -153,3 +148,10 @@ export const Aside: TrackInfoType[] = [
     comment: "",
   },
 ];
+
+export const oldASide = `This first side is pretty simple and was easiest to just attach a
+playlist/radio station that I find myself often listening to lately.
+But for me it sets a mood, a genre you kinda got me hooked on and now
+I've come to associate it with you. Either way it's chill, calming,
+and relaxing and just reminds me of hanging out with you in our more
+recent times.`;

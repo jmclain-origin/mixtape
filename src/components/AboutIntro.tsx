@@ -59,7 +59,9 @@ const AboutIntro = ({ currentSide, flipCassette }: Props) => {
     if (currentSide === "A") setCassetteFlipRotation(360);
     else if (currentSide === "B") setCassetteFlipRotation(0);
   }, [currentSide, flipCassette]);
+
   type A = { scale: number, opacity: number };
+
   return (
     <AnimatePresence>
       {isShown && (
@@ -122,7 +124,7 @@ const AboutIntro = ({ currentSide, flipCassette }: Props) => {
                 onAnimationComplete={(def: any) => {
                   if (def?.y > 0) navigate(`/play/${currentSide}`);
                 }}
-                className="relative mt-3"
+                className="relative mt-5"
               >
                 <CassetteTape currentSide={currentSide} />
               </motion.div>

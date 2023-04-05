@@ -1,20 +1,12 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import ASide from "components/ASide";
-import BSide from "components/BSide";
+import Playlist from "components/Playlist";
 
-type T = { side?: "A" | "B"  };
+type T = { side?: "A" | "B" | "C" | "Bonus" };
 
 function PlayView(): JSX.Element {
   const { side }: T = useParams();
-
- if (side === "A") {
-    return <ASide />;
-  } else if (side === "B") {
-    return <BSide />;
-  } else {
-    throw new Error("Invalid side");
- }
+return <Playlist selectedSide={side} />;
 }
 
 export default PlayView;
