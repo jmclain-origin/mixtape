@@ -3,11 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { FaPlay, FaStepBackward, FaRetweet } from "react-icons/fa";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import CassetteTape from "./CassetteTape";
-import "./AboutIntro.style.scss";
+import "./styles/AboutIntro.style.scss";
 
 type Props = {
-  isShown: boolean;
-  goBack: () => void;
   currentSide: "A" | "B";
   flipCassette: () => void;
 };
@@ -43,20 +41,25 @@ const itemAnim: Variants = {
   },
 };
 
-const AboutIntro = ({ isShown, goBack, currentSide, flipCassette }: Props) => {
+const AboutIntro = ({ currentSide, flipCassette }: Props) => {
   const navigate = useNavigate();
   const [cassetteFlipRotation, setCassetteFlipRotation] = useState(0);
   const [displayCassette, setDisplayCassette] = useState(true);
+  const [isShown, setIsShown] = useState(true);
 
   const playCassette = useCallback(() => {
     setDisplayCassette(false);
   }, [setDisplayCassette]);
 
+  const handleGoBack = useCallback(() => {
+    setIsShown(false)
+  }, []);
+
   useEffect(() => {
     if (currentSide === "A") setCassetteFlipRotation(360);
     else if (currentSide === "B") setCassetteFlipRotation(0);
   }, [currentSide, flipCassette]);
-
+  type A = { scale: number, opacity: number };
   return (
     <AnimatePresence>
       {isShown && (
@@ -75,8 +78,9 @@ const AboutIntro = ({ isShown, goBack, currentSide, flipCassette }: Props) => {
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1, transition: { duration: 1.5 } }}
               exit={{ scale: 0, opacity: 0, transition: { duration: 0.5 } }}
+              onAnimationComplete={(def: A) => {if (def.scale === 0) navigate("/");}}
             >
-              <FaStepBackward className="control-button" onClick={goBack} />
+              <FaStepBackward className="control-button" onClick={handleGoBack} />
               <FaPlay className="control-button" onClick={playCassette} />
               <FaRetweet className="control-button" onClick={flipCassette} />
             </motion.div>

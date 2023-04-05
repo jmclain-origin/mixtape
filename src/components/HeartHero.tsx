@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import "./HeartHero.style.scss";
+import "./styles/HeartHero.style.scss";
 
 type Props = {
   isShown: boolean;
@@ -18,29 +18,17 @@ const HeartHero = ({ isShown, setIsShown }: Props) => {
             initial={{ y: -200 }}
             animate={{ y: 0, transition: { duration: 6 } }}
             exit={{ opacity: 0, transition: { duration: 1 } }}
-            className="freehand text-5xl text-center pt-16"
+            className="font-sassy text-5xl text-center pt-16"
           >
             Happy Valentine's Day
           </motion.h1>
-          <motion.h2
-            initial={{ y: 125, opacity: 0 }}
-            animate={{
-              y: 0,
-              opacity: 1,
-              transition: { duration: 3, delay: 5 },
-            }}
-            exit={{ scale: 0, transition: { duration: 1 } }}
-            className="freehand text-4xl text-center pt-12"
-          >
-            Tap the heart
-          </motion.h2>
           <motion.div
             initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, scale: 0 }}
             transition={{ duration: 1.5 }}
             onAnimationComplete={(def: any) => {
-              if (def?.scale === 0) navigate('/intro')
+              if (def?.scale === 0) navigate("/intro");
             }}
           >
             <svg

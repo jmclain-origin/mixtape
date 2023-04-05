@@ -1,5 +1,5 @@
 import React from "react";
-import "./CassetteTape.style.scss";
+import "./styles/CassetteTape.style.scss";
 type Props = {
     currentSide: "A" | "B",
 }
