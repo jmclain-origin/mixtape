@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { FaPlay, FaStepBackward, FaRetweet } from "react-icons/fa";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import CassetteTape from "./CassetteTape";
-import "./styles/AboutIntro.style.scss";
 
 type Props = {
   currentSide: "A" | "B";
@@ -52,7 +51,7 @@ const AboutIntro = ({ currentSide, flipCassette }: Props) => {
   }, [setDisplayCassette]);
 
   const handleGoBack = useCallback(() => {
-    setIsShown(false)
+    setIsShown(false);
   }, []);
 
   useEffect(() => {
@@ -60,7 +59,7 @@ const AboutIntro = ({ currentSide, flipCassette }: Props) => {
     else if (currentSide === "B") setCassetteFlipRotation(0);
   }, [currentSide, flipCassette]);
 
-  type A = { scale: number, opacity: number };
+  type A = { scale: number; opacity: number };
 
   return (
     <AnimatePresence>
@@ -76,15 +75,23 @@ const AboutIntro = ({ currentSide, flipCassette }: Props) => {
             <hr className="mb-4" />
             <motion.div
               id="controlButtons"
-              className="flex flex-row w-100 items-center justify-around pb-3"
+              className="pb-3"
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1, transition: { duration: 1.5 } }}
               exit={{ scale: 0, opacity: 0, transition: { duration: 0.5 } }}
-              onAnimationComplete={(def: A) => {if (def.scale === 0) navigate("/");}}
+              onAnimationComplete={(def: A) => {
+                if (def.scale === 0) navigate("/");
+              }}
             >
-              <FaStepBackward className="control-button" onClick={handleGoBack} />
-              <FaPlay className="control-button" onClick={playCassette} />
-              <FaRetweet className="control-button" onClick={flipCassette} />
+              <button className="control-btn" onClick={handleGoBack}>
+                <FaStepBackward className="mx-auto" />
+              </button>
+              <button className="control-btn mx-4" onClick={playCassette}>
+                <FaPlay className="mx-auto" />
+              </button>
+              <button className="control-btn" onClick={flipCassette}>
+                <FaRetweet className="mx-auto" />
+              </button>
             </motion.div>
             <hr className="mx-4" />
             <motion.p variants={itemAnim}>

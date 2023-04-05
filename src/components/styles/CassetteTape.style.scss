@@ -14,7 +14,7 @@ $body: #4c8077;
 
 $lato: "Lato", sans-serif;
 
-.container {
+.container_cas {
   margin: 0 auto;
   max-width: 60rem;
   width: 100%;
@@ -35,6 +35,7 @@ $lato: "Lato", sans-serif;
   border-radius: $radius;
   background: $cassette;
   color: #231f23;
+  box-shadow: 0 12px 25px 8px rgba(255,255,255,0.4);
 
   &:before,
   &:after {

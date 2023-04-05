@@ -6,7 +6,7 @@ type Props = {
 
 const CassetteTape = ({ currentSide }: Props) => {
   return (
-    <div className="container">
+    <div className="container_cas">
       <div className="cassette">
         <div className="cassette__label">
           <div className="cassette__details">

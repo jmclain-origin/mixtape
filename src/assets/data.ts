@@ -78,74 +78,74 @@ export const bSide: TrackInfo[] = [
 
 export const aSide: TrackInfo[] = [
   {
-    title: "Crave you - Flight Facilities",
-    src: "https://open.spotify.com/embed/track/5jdGLLEA1e85jy9VYdggoP?utm_source=generator&theme=0",
-    comment: "",
+    title: "Christfuck - :Wumpscut:",
+    src: "https://open.spotify.com/embed/track/2c3YMLhVxJqIlOdDQHO7yx?utm_source=generator",
+    comment: "Should be familiar, in that moment something felt so pure and nothing else existed. You think I'd never done, I just something so rare I have no words for, besides...Amazing!",
   },
   {
     title: "Close To Me - The Cure",
     src: "https://open.spotify.com/embed/track/4xiyq1iRdsxuU1BPUJ490Z?utm_source=generator",
-    comment: "",
+    comment: "Right after dropping this popped in my head, and felt so right. Once I thought you were one that got away and in the moment I had no doubt of the butterflies we shared.",
   },
   {
     title: "Right Here In My Arms",
     src: "https://open.spotify.com/embed/track/4vM4pg4hwediQXCtj21tnI?utm_source=generator",
-    comment: "",
-  },
-  {
-    title: "3 Libras - A Perfect Circle",
-    src: "https://open.spotify.com/embed/track/5kHkaBN8OEQlmXfQkACxSt?utm_source=generator",
-    comment: "",
+    comment: "This one came to me wanting and know how much better it would be if you were in my arms, as the weeks passed this came up more.",
   },
   {
     title: "Rx Queen - Deftones",
     src: "https://open.spotify.com/embed/track/6HgrJfzfj9WRBABdussy8z?utm_source=generator",
-    comment: "",
+    comment: "Is it love or lust? It's both, while the lust is getting pushed down the love remains, truth is I'm so addicted to you I need a prescription.",
   },
   {
-    title: "Christfuck - :Wumpscut:",
-    src: "https://open.spotify.com/embed/track/2c3YMLhVxJqIlOdDQHO7yx?utm_source=generator",
-    comment: "",
+    title: "Crave you - Flight Facilities",
+    src: "https://open.spotify.com/embed/track/5jdGLLEA1e85jy9VYdggoP?utm_source=generator&theme=0",
+    comment: "Simple that I do crave you, and see it going away even if you do. Nothing compares to you. You're one of a kind and I enjoy the finer things in life.",
   },
   {
     title: "Pure Morning - Placebo",
     src: "https://open.spotify.com/embed/track/32F0zqsDgqpIEYApk2b8sr?utm_source=generator",
-    comment: "",
-  },
-  {
-    title: "Chemicals + Circuritry - Grendal",
-    src: "https://open.spotify.com/embed/track/5tP1vUcXWLYdRgpDETUZ7X?utm_source=generator",
-    comment: "",
-  },
-  {
-    title: "Chrome - VNV Nation",
-    src: "https://open.spotify.com/embed/track/1hx7w7Csn4m3H9jPw60Ptp?utm_source=generator",
-    comment: "",
+    comment: "A friend with weed is a friend indeed",
   },
   {
     title: "Turns off Pain - :Wumpscut:",
     src: "https://open.spotify.com/embed/track/4FpvUcGsERwfLNMQgbq9aY?utm_source=generator",
-    comment: "",
+    comment: "Some about your presence is soothing, I miss you often. I know relax you too, I wish could have more time together, maybe one day.",
   },
   {
-    title: "Jambi - Tool",
-    src: "https://open.spotify.com/embed/track/2gbPu2QNqhnnqtfK3yyeZ0?utm_source=generator",
-    comment: "",
+    title: "Chemicals + Circuritry - Grendal",
+    src: "https://open.spotify.com/embed/track/5tP1vUcXWLYdRgpDETUZ7X?utm_source=generator",
+    comment: "More about my getting fucked up, especially on details that don't matter, but I focus on the little things they stand out the most.",
+  },
+  {
+    title: "Chrome - VNV Nation",
+    src: "https://open.spotify.com/embed/track/1hx7w7Csn4m3H9jPw60Ptp?utm_source=generator",
+    comment: "I try to reach you, to heal you for yourself. Help you change the path you wander. At times I wonder if I'm driving you away or if I'm really helping you, maybe I should stop talking for the good of myself.",
+  },
+  {
+    title: "I Like You - Device Noize",
+    src: "https://open.spotify.com/embed/track/6wDNCdK2oL07EGm3JL4xNz?utm_source=generator",
+    comment: "The first track to the fucking list. Meant to split you in two till you can't walk again.",
   },
   {
     title: "Feel Me Fuck Me - Shadow System",
     src: "https://open.spotify.com/embed/track/4CqLfw0hVSG1bTNmoXhESc?utm_source=generator",
-    comment: "",
-  },
-  {
-    title: "I Like You",
-    src: "https://open.spotify.com/embed/track/6wDNCdK2oL07EGm3JL4xNz?utm_source=generator",
-    comment: "",
+    comment: "Many times after hearing this one I kept on hearing it every time I let myself feel alone.",
   },
   {
     title: "Go With The Flow - Queen of the Stone Age",
     src: "https://open.spotify.com/embed/track/45DElIx0dXqUH4A88yQFdE?utm_source=generator",
-    comment: "",
+    comment: "It's was a wonderful day for me personally when I woke up and this was already playing in my head. I had this awakening in my life and a perspective not carried before.",
+  },
+  {
+    title: "3 Libras - A Perfect Circle",
+    src: "https://open.spotify.com/embed/track/5kHkaBN8OEQlmXfQkACxSt?utm_source=generator",
+    comment: "Hard to really explain this without sounding like I gave up, in a way maybe I did. Or just realized that my true nature. That my fantasies aren't real.",
+  },
+  {
+    title: "Jambi - Tool",
+    src: "https://open.spotify.com/embed/track/2gbPu2QNqhnnqtfK3yyeZ0?utm_source=generator",
+    comment: "Another one that came to my head related to you. I didn't even know what it was about until I looked at it closer, then it made sense why. I've felt it before.",
   },
 ];
 

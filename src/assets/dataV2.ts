@@ -24,6 +24,10 @@ export const A_SIDE: ListDetail = {
 
 export const B_SIDE: ListDetail = {
     header: 'Sounds of evolution',
-    note: '',
+    note: `There is to much more to say and mostly not worth saying. I get in my head a lot. These last couple of
+     months have insightful. I'm grateful that you have come back into my life. Since that day I've put through 
+     many emotions. Never was one directed at you, because of you I've had to look at myself and evaluate what it is
+     I want. Thank you for your patience. Throughout the journey this far the playlist has evolved, more songs that I 
+     wake to in my head. Things that make me think of you somehow. I love you.`,
     tracks: [...aSide]
 }

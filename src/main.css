@@ -8,7 +8,12 @@
 
 @layer base {
     body {
-        background: linear-gradient(to bottom right, #0b1120 0%, #3b1a37 100%);
-        color: #ccc;
+        @apply bg-neutral-800 text-zinc-300;
+    }
+}
+
+@layer components {
+    .control-btn {
+        @apply text-neutral-900 cursor-pointer hover:text-yellow-400 transition-all w-1/4 py-3 text-3xl bg-gradient-to-t from-indigo-600 to-pink-600 rounded active:text-neutral-200 active:translate-y-2 active:shadow-md active:shadow-white shadow-lg shadow-black;
     }
 }
