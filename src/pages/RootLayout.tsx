@@ -1,52 +1,23 @@
-import React, { useCallback, MouseEvent } from "react";
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import { FaBackward, FaForward } from "react-icons/fa";
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Navbar from "components/Navbar";
+import { useScreenWidth } from "hooks/useScreenWidth";
 
 export default function RootLayout() {
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  const isHome = location.pathname === "/";
-  const isPlaylist = /play\/[AB]$/g.test(location.pathname);
-  const isAside = /play\/A$/g.test(location.pathname);
-  const isBside = /play\/B$/g.test(location.pathname);
- 
-  const handleNavigationClick = useCallback((event: MouseEvent<HTMLSpanElement>) => {
-    const action: "back" | "forward" | null | string = event.currentTarget.getAttribute('data-action');
-    if (action === "back") {
-      isAside && navigate("/intro");
-      isBside && navigate("/play/A");
-    } else if (action === "forward") {
-      isAside && navigate("/play/B");
-      isBside && navigate("/bonus");
-    }
-  }, [isAside, isBside, navigate]);
-
+  const screenWidth = useScreenWidth();
   return (
     <>
-      <nav className="flex items-center justify-between px-5 py-4">
-        <span className="text-2xl" onClick={handleNavigationClick} data-action="back" >
-          {isPlaylist ? (
-            <FaBackward
-              className="control-button"
-            />
-          ) : (
-            <>&#10084;</>
-          )}
-        </span>
-        {!isHome && <h2 className="text-3xl">Mix Tape</h2>}
-        <span className="text-2xl" onClick={handleNavigationClick} data-action="forward">
-          {isPlaylist ? (
-            <FaForward
-              className="control-button"
-            />
-          ) : (
-            <>&#10084;</>
-          )}
-        </span>
-      </nav>
-      <main className="min-h-screen px-4 pt-3">
-        <Outlet />
+      <main
+        className={`min-h-screen max-w-[450px] mx-auto bg-gradient-to-br from-dark-purple to-deep-purple ${
+          screenWidth > 452
+            ? "border-x-[24px] border-zinc-600 shadow-xl shadow-black"
+            : ""
+        }`}
+      >
+          <Navbar />
+          <div className="px-2">
+            <Outlet />
+          </div>
       </main>
     </>
   );

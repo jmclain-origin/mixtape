@@ -1,12 +1,12 @@
 import React from "react";
-import "./CassetteTape.style.scss";
+import "./styles/CassetteTape.style.scss";
 type Props = {
     currentSide: "A" | "B",
 }
 
 const CassetteTape = ({ currentSide }: Props) => {
   return (
-    <div className="container">
+    <div className="container_cas">
       <div className="cassette">
         <div className="cassette__label">
           <div className="cassette__details">

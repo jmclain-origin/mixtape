@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Sassy+Frass&display=swap'); // font-family: 'Sassy Frass', cursive
 
-$strokeColor: grey;
-$heartColor: #410b44;
+$strokeColor: rgb(169, 169, 169);
+$heartColor: #000000;
 $size: 165px; // change this to manipulate overall size
 $totalAnim: 7s;
 $delay: 0.1s;
@@ -10,10 +9,6 @@ $circleLen: 188.522;
 $heartLen: 308.522;
 $svgSize: 90px;
 $circleW: 60px;
-
-.freehand {
-  font-family: 'Sassy Frass', cursive;
-}
 
 .heart-loader {
   position: absolute;
